@@ -97,7 +97,7 @@ export default function DashboardPage() {
   useEffect(() => {
     const token = authStorage.getToken();
     if (!token) {
-      router.replace('/login');
+      router.replace('/register');
       return;
     }
 
@@ -122,7 +122,7 @@ export default function DashboardPage() {
       })
       .catch(() => {
         authStorage.clearAll();
-        router.replace('/login');
+        router.replace('/register');
       })
       .finally(() => {
         setIsAuthChecking(false);
@@ -248,7 +248,7 @@ export default function DashboardPage() {
     await clearGoogleSessionHint().catch(() => null);
     setIsProfilePanelOpen(false);
     authStorage.clearAll();
-    router.push('/login');
+    router.push('/register');
   };
 
   const analyzeResume = async () => {

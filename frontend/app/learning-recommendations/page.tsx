@@ -37,7 +37,7 @@ export default function LearningRecommendationsPage() {
   useEffect(() => {
     const token = authStorage.getToken();
     if (!token) {
-      router.replace('/login');
+      router.replace('/register');
       return;
     }
     setIsAuthChecking(false);

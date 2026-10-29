@@ -38,7 +38,7 @@ const pageItems = [
   { href: '/', label: 'Home', icon: House },
   { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/career-resources', label: 'Career Resources', icon: BookOpenCheck },
-  { href: '/login', label: 'Switch Account', icon: Target }
+  { href: '/register', label: 'New Account', icon: Target }
 ];
 
 interface DashboardSidebarProps {

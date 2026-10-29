@@ -229,9 +229,6 @@ export default function HomePage() {
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
-                <Link href="/login">
-                  <Button variant="outline">Already registered? Sign in</Button>
-                </Link>
               </div>
             </div>
 
@@ -280,15 +277,6 @@ export default function HomePage() {
                 <Button size="lg" className="w-full gap-2">
                   Request Call Back
                   <ArrowRight className="h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="/login">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="w-full border-sky-300/35 bg-slate-900/25 text-white hover:bg-slate-800/45"
-                >
-                  Login To Continue
                 </Button>
               </Link>
             </div>

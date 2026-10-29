@@ -40,7 +40,7 @@ export const SiteHeader = () => {
     authStorage.clearAll();
     setHasToken(false);
     setMobileMenuOpen(false);
-    router.push('/login');
+    router.push('/');
   };
 
   return (
@@ -78,11 +78,6 @@ export const SiteHeader = () => {
 
           {!hasToken ? (
             <div className="ml-1 flex items-center gap-2">
-              <Link href="/login">
-                <Button variant="outline" size="sm">
-                  Login
-                </Button>
-              </Link>
               <Link href="/register">
                 <Button size="sm">Get Started</Button>
               </Link>
@@ -141,11 +136,6 @@ export const SiteHeader = () => {
 
             {!hasToken ? (
               <>
-                <Link href="/login">
-                  <Button variant="outline" className="w-full justify-center">
-                    Login
-                  </Button>
-                </Link>
                 <Link href="/register">
                   <Button className="w-full justify-center">Get Started</Button>
                 </Link>

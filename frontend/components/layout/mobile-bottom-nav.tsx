@@ -22,7 +22,7 @@ const baseItems: NavItem[] = [
   { id: 'profile', label: 'Profile', href: '/dashboard?profile=1', icon: UserRound }
 ];
 
-const hiddenRoutes = new Set(['/login', '/register']);
+const hiddenRoutes = new Set(['/register']);
 
 export const MobileBottomNav = () => {
   const pathname = usePathname();
@@ -41,7 +41,7 @@ export const MobileBottomNav = () => {
       baseItems.map((item) => {
         if (!hasToken) {
           if (item.id === 'dashboard' || item.id === 'profile') {
-            return { ...item, href: '/login' };
+            return { ...item, href: '/register' };
           }
           if (item.id === 'resources') {
             return { ...item, href: '/register' };
@@ -93,7 +93,7 @@ export const MobileBottomNav = () => {
                 type="button"
                 onClick={() => {
                   if (!hasToken) {
-                    router.push('/login');
+                    router.push('/register');
                     return;
                   }
 

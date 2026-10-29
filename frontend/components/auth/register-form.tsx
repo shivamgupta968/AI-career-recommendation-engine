@@ -2,7 +2,6 @@
 
 import { useState, type FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -128,12 +127,6 @@ export const RegisterForm = () => {
           <Button className="w-full" type="submit" disabled={isLoading}>
             {isLoading ? 'Creating Account...' : 'Create Account'}
           </Button>
-          <p className="text-center text-sm text-muted-foreground">
-            Already have an account?{' '}
-            <Link href="/login" className="font-medium text-primary hover:underline">
-              Login
-            </Link>
-          </p>
         </form>
       </CardContent>
     </Card>
