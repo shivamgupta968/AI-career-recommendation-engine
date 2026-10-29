@@ -41,10 +41,10 @@ export const MobileBottomNav = () => {
       baseItems.map((item) => {
         if (!hasToken) {
           if (item.id === 'dashboard' || item.id === 'profile') {
-            return { ...item, href: '/register' };
+            return { ...item, href: '/dashboard' };
           }
           if (item.id === 'resources') {
-            return { ...item, href: '/register' };
+            return { ...item, href: '/dashboard' };
           }
         }
         return item;
@@ -93,7 +93,7 @@ export const MobileBottomNav = () => {
                 type="button"
                 onClick={() => {
                   if (!hasToken) {
-                    router.push('/register');
+                    router.push('/dashboard');
                     return;
                   }
 

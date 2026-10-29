@@ -6,7 +6,6 @@ import { BriefcaseBusiness, LogOut, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ThemeSelector } from '@/components/theme/theme-selector';
-import { OpenCreditsButton } from '@/components/home/open-credits-button';
 import { authStorage } from '@/lib/auth';
 import { clearGoogleSessionHint } from '@/lib/google-auth';
 import { cn } from '@/lib/utils';
@@ -74,11 +73,9 @@ export const SiteHeader = () => {
             </Link>
           ))}
 
-          <OpenCreditsButton buttonProps={{ variant: 'outline', size: 'sm' }} />
-
           {!hasToken ? (
             <div className="ml-1 flex items-center gap-2">
-              <Link href="/register">
+              <Link href="/dashboard">
                 <Button size="sm">Get Started</Button>
               </Link>
             </div>
@@ -132,11 +129,10 @@ export const SiteHeader = () => {
           </div>
 
           <div className="mt-3 grid gap-2">
-            <OpenCreditsButton buttonProps={{ variant: 'outline', className: 'w-full justify-center' }} />
 
             {!hasToken ? (
               <>
-                <Link href="/register">
+                <Link href="/dashboard">
                   <Button className="w-full justify-center">Get Started</Button>
                 </Link>
               </>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import { ensureGuestSession } from '@/lib/guest';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { AlertTriangle, BrainCircuit, FileText, Loader2, Save, Upload } from 'lucide-react';
@@ -95,13 +96,8 @@ export default function DashboardPage() {
   const [topK, setTopK] = useState(5);
 
   useEffect(() => {
-    const token = authStorage.getToken();
-    if (!token) {
-      router.replace('/register');
-      return;
-    }
-
-    Promise.all([apiClient.me(), apiClient.getRecommendationHistory().catch(() => [])])
+    ensureGuestSession()
+      .then(() => Promise.all([apiClient.me(), apiClient.getRecommendationHistory().catch(() => [])]))
       .then(([profile, fetchedHistory]) => {
         setUser(profile);
         setProfileName(profile.name || '');
@@ -122,7 +118,6 @@ export default function DashboardPage() {
       })
       .catch(() => {
         authStorage.clearAll();
-        router.replace('/register');
       })
       .finally(() => {
         setIsAuthChecking(false);
@@ -248,7 +243,7 @@ export default function DashboardPage() {
     await clearGoogleSessionHint().catch(() => null);
     setIsProfilePanelOpen(false);
     authStorage.clearAll();
-    router.push('/register');
+    router.push('/dashboard');
   };
 
   const analyzeResume = async () => {

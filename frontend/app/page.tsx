@@ -1,3 +1,4 @@
+import { WelcomePopup } from '@/components/home/welcome-popup';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -19,8 +20,6 @@ import {
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CreditsPopup } from '@/components/home/credits-popup';
-import { OpenCreditsButton } from '@/components/home/open-credits-button';
 import { CODING_PLATFORMS, LEARNING_CHANNELS } from '@/lib/learning-resources';
 
 const highlights = [
@@ -103,7 +102,7 @@ const topTechnologiesPreview = Array.from(new Set(LEARNING_CHANNELS.map((channel
 export default function HomePage() {
   return (
     <main className="page-shell">
-      <CreditsPopup />
+      <WelcomePopup />
 
       <section className="mx-auto max-w-7xl px-4 pb-8 pt-10 sm:px-6 lg:px-8">
         <Card className="overflow-hidden border-border/70 bg-gradient-to-br from-[#0f1729] via-[#111a2d] to-[#132847] text-white">
@@ -134,7 +133,7 @@ export default function HomePage() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/register">
+              <Link href="/dashboard">
                 <Button size="lg" className="gap-2">
                   Start Career Mapping
                   <ArrowRight className="h-4 w-4" />
@@ -223,7 +222,7 @@ export default function HomePage() {
                 ))}
               </div>
               <div className="flex flex-wrap gap-2">
-                <Link href="/register">
+                <Link href="/dashboard">
                   <Button className="gap-2">
                     Unlock Career Resources
                     <ArrowRight className="h-4 w-4" />
@@ -273,7 +272,7 @@ export default function HomePage() {
               </ul>
             </div>
             <div className="flex flex-col justify-center gap-3">
-              <Link href="/register">
+              <Link href="/dashboard">
                 <Button size="lg" className="w-full gap-2">
                   Request Call Back
                   <ArrowRight className="h-4 w-4" />
@@ -361,7 +360,6 @@ export default function HomePage() {
               </Badge>
             </div>
             <div className="mt-4">
-              <OpenCreditsButton buttonProps={{ variant: 'outline', size: 'sm' }} />
             </div>
           </div>
         </div>

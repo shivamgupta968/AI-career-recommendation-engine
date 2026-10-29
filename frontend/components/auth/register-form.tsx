@@ -51,7 +51,7 @@ export const RegisterForm = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Create Account</CardTitle>
+        <CardTitle>Get Started</CardTitle>
         <CardDescription>Start generating personalized career recommendations.</CardDescription>
       </CardHeader>
       <CardContent>
@@ -125,7 +125,7 @@ export const RegisterForm = () => {
             />
           </div>
           <Button className="w-full" type="submit" disabled={isLoading}>
-            {isLoading ? 'Creating Account...' : 'Create Account'}
+            {isLoading ? 'Please wait...' : 'Continue'}
           </Button>
         </form>
       </CardContent>
